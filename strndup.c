@@ -5,7 +5,9 @@
 char *strndup(const char *s, size_t n)
 {
     char* new = malloc(n+1);
-    strncpy(new, s, n);
-    new[n] = '\0';
+    if (new) {
+        strncpy(new, s, n);
+        new[n] = '\0';
+    }
     return new;
 }
